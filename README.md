@@ -25,5 +25,14 @@ You'll need to setup a [new Slack App](https://api.slack.com/apps/new) and add a
 
 A [Firebase](firebase) project is also required.  Slack Team data from the "Add to Slack" OAuth flow, as well as conversation state is stored there. Make sure to add your service account key file as `firebase.json` and set your `FIREBASE_DB_URL` environment variable.
 
+## Running App
+Once you have your app running, if you visit the root, `https://<your-domain>/` it will render a page with an "Add to Slack" button you can use to add it to one of your Slack teams and start sending it messages.
+
+Try asking the bot for help in a direct message
+
+![image](https://cloud.githubusercontent.com/assets/367275/17531990/b05399a4-5e3b-11e6-9dc0-21a29f27c913.png)
+
+Try changing the messages the bot is listening for to get a feel for how things work by looking in [`lib/slapp.js`](https://github.com/BeepBoopHQ/slapp-firebase-example/blob/master/lib/slapp.js)
+
 [slap]: https://github.com/BeepBoopHQ/slapp
 [firebase]: https://firebase.google.com
