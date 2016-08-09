@@ -1,5 +1,5 @@
 # slapp-firebase-example
-An example Slapp Slack App using Firebase as the persistence layer
+An example [Slapp][slap] Slack App using [Firebase][firebase] as the persistence layer. A primary goal of this repo is to serve as an example of you you might integrate a custom persistence layer w/ [Slapp][slap].
 
 Expects the following environment variables:
 
@@ -22,3 +22,8 @@ You'll need to setup a [new Slack App](https://api.slack.com/apps/new) and add a
     * `message.groups`
     * `message.im`
     * `message.mpim`
+
+A [Firebase](firebase) project is also required.  Slack Team data from the "Add to Slack" OAuth flow, as well as conversation state is stored there. Make sure to add your service account key file as `firebase.json` and set your `FIREBASE_DB_URL` environment variable.
+
+[slap]: https://github.com/BeepBoopHQ/slapp
+[firebase]: https://firebase.google.com
