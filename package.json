@@ -2,7 +2,6 @@
   "name": "slapp-firebase-example",
   "version": "1.0.0",
   "description": "An example Slapp Slack App using Firebase as the persistence layer",
-  "main": "index.js",
   "scripts": {
     "test": "standard"
   },
@@ -19,8 +18,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "firebase": "^3.2.1",
-    "slack": "^7.7.1",
-    "slapp": "^1.0.2"
+    "slapp": "^1.0.3"
   },
   "devDependencies": {
     "standard": "^7.1.2"
