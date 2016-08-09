@@ -4,6 +4,7 @@ An example Slapp Slack App using Firebase as the persistence layer
 Expects the following environment variables:
 
 + `PORT` - port to start http server on - defaults to `3000`
++ `DOMAIN` - domain name - defaults to pulling from host headers on requests
 + `SLACK_VERIFY_TOKEN` - Your Slack App's verify token
 + `SLACK_CLIENT_ID` - Your Slack App's Client ID
 + `SLACK_CLIENT_SECRET` - Your Slack App's Client Secret
