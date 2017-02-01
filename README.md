@@ -9,8 +9,24 @@ Expects the following environment variables:
 + `SLACK_CLIENT_ID` - Your Slack App's Client ID
 + `SLACK_CLIENT_SECRET` - Your Slack App's Client Secret
 + `FIREBASE_DB_URL` - Your Firebase project's Database URL
++ `FIREBASE_SERVICE_ACCOUNT_BASE64` - Your Firebase project's ID
 
-Also expected is a [Firebase Service account key file](https://firebase.google.com/docs/server/setup) located in the root of the project, named `firebase.json`.
+To create your `FIREBASE_SERVICE_ACCOUNT_BASE64` value you'll want to head to your Firebase project's Service Accounts settings and generate a new Private Key `json` file.  You'll need to base64 encode the contents of the file to be able to set it as an environment variable.
+
+```bash
+base64 /path/to/service-account.json
+```
+
+For development you can set your environment variables in an `env.sh` file (which is `.gitignored` for you), and then just source it.
+
+```bash
+export PORT="8080"
+export SLACK_VERIFY_TOKEN="your-slack-verify-token"
+export SLACK_CLIENT_ID="your-slack-app-client-id"
+export SLACK_CLIENT_SECRET="your-slack-app-client-secret"
+export FIREBASE_DB_URL="your-firebase-url"
+export FIREBASE_SERVICE_ACCOUNT_BASE64="base64 encoded service account key file contents"
+```
 
 ## Getting Started
 
@@ -23,7 +39,7 @@ You'll need to setup a [new Slack App](https://api.slack.com/apps/new) and add a
     * `message.im`
     * `message.mpim`
 
-A [Firebase](firebase) project is also required.  Slack Team data from the "Add to Slack" OAuth flow, as well as conversation state is stored there. Make sure to add your service account key file as `firebase.json` and set your `FIREBASE_DB_URL` environment variable.
+A [Firebase](firebase) project is also required.  Slack Team data from the "Add to Slack" OAuth flow, as well as conversation state is stored there.
 
 ## Running App
 Once you have your app running, if you visit the root, `https://<your-domain>/` it will render a page with an "Add to Slack" button you can use to add it to one of your Slack teams and start sending it messages.
